@@ -1,23 +1,30 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
+  <div class="app-wrapper">
     <div v-if="false" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
-    <div :class="{hasTagsView:needTagsView}" class="main-container">
-      <div :class="{'fixed-header':fixedHeader}">
+    <div class="main-container">
+      <div>
         <navbar />
-        <tags-view v-if="needTagsView" />
+        <!--<tags-view />-->
       </div>
       <app-main />
-      <right-panel v-if="showSettings">
+      <!-- <right-panel>
         <settings />
-      </right-panel>
+      </right-panel> -->
     </div>
+    <footer />
+        <!-- <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.1.0-pre
+        </div>
+        </footer> -->
   </div>
 </template>
 
 <script>
-import RightPanel from '@/components/RightPanel'
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from './components'
+// import RightPanel from '@/components/RightPanel'
+import { AppMain, Navbar, Settings, Sidebar, Footer } from './components'
 import { mapState } from 'vuex'
 
 export default {
@@ -25,10 +32,10 @@ export default {
   components: {
     AppMain,
     Navbar,
-    RightPanel,
+    // RightPanel,
     Settings,
     Sidebar,
-    TagsView
+    Footer
   },
 
   computed: {
